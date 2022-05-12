@@ -51,8 +51,9 @@
         .filme-principal{
             font-size:16px;
             background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%),url("getImageFundoPrincipal.jsp?id=<%=background%>");
+            background-size: auto;
             height:500px;
-            background-size:cover;
+            background-size: 100% 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;

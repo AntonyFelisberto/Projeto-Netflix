@@ -31,6 +31,7 @@
     }while(background==0 || (listarNumeroDeDados.retornarVerificacaoIdade(background,Registro.getIdade())!=true));
     /*
         FAZER VERIFICAÇÃO AUTENTICAÇÃO DE USUARIO(WILLIAM)
+        ARRUMAR QUESTÃO DE MULTIPLOS VIDEOS PARA UMA IMAGEM(AS TAGS DE VIDEO ESTÃO FICANDO UMA DENTRO DA OUTRA)
     */
 %>
 

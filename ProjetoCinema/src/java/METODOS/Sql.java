@@ -1,16 +1,16 @@
 package METODOS;
 
 public enum Sql {
-    SELECT("SELECT cpf FROM Usuario WHERE CPF='%s'",
-           "SELECT nome,senha FROM Usuario ",
+    SELECT( "SELECT cpf FROM Usuario WHERE CPF='%s'",
+            "SELECT nome,senha FROM Usuario ",
             "SELECT ano FROM Usuario WHERE nome='%s' and senha='%s'",
-            "SELECT * FROM imagens WHERE tipo='%s'",
-            "SELECT * FROM imagens",
-            "SELECT * FROM imagens WHERE idImagem=%d",
-            "SELECT idImagem,classificacaoIndicativa FROM imagens",
-            "SELECT idImagem,classificacaoIndicativa FROM imagens WHERE tipo='%s'",
-            "SELECT idImagem,classificacaoIndicativa FROM imagens WHERE titulo LIKE '%s%s%s' OR titulo LIKE '%s%s%s'",
-            "SELECT classificacaoIndicativa FROM imagens WHERE idImagem=%d"
+            "SELECT * FROM imagens WHERE tipo='%s' AND imagem IS NOT NULL",
+            "SELECT * FROM imagens WHERE imagem IS NOT NULL",
+            "SELECT * FROM imagens WHERE idImagem=%d AND imagem IS NOT NULL",
+            "SELECT idImagem,classificacaoIndicativa FROM imagens WHERE imagem IS NOT NULL",
+            "SELECT idImagem,classificacaoIndicativa FROM imagens WHERE tipo='%s' AND imagem IS NOT NULL",
+            "SELECT idImagem,classificacaoIndicativa FROM imagens WHERE titulo LIKE '%s%s%s' AND imagem IS NOT NULL OR (titulo LIKE '%s%s%s' AND imagem IS NOT NULL)",
+            "SELECT classificacaoIndicativa FROM imagens WHERE idImagem=%d AND imagem IS NOT NULL"
            );
     
     private final String codigo;
