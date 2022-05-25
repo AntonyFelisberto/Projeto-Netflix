@@ -1,8 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%/*
-    FAZER VERIFICAÇÃO AUTENTICAÇÃO DE USUARIO(WILLIAM)
-*/%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +10,11 @@
     <title>Pagina de login Cinema One</title>
 </head>
 <body id="fundo" >
-
     <div id="video">
     <video id="toque"  autoplay loop class="bg_video">
         <source src="arquivos/anime-login.mp4" type="video/mp4">
     </video>
     </div>
-
-
    <header>
     <h1>WELCOME TO CINEMA ONE</h1>
     <h2>por favor preencha o formulario a baixo</h2>
@@ -37,6 +30,5 @@
     <br>
     <button><a href="index.jsp">não tenho cadastro</a></button>
     </main>
-    
 </body>
 </html>

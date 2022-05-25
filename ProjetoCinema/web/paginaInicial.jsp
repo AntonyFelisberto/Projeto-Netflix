@@ -11,8 +11,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.Listar"%>
 <%@page import="METODOS.Sql" %>
-
-
 <%
     ResultSet realizarBusca;
     Statement realizarQuery;
@@ -26,11 +24,7 @@
     do{
         background=gerarNumeroRandomico.nextInt(listarNumeroDeDados.retornarNumeroDeDadosNoBanco());
     }while(background==0 || (listarNumeroDeDados.retornarVerificacaoIdade(background,Registro.getIdade())!=true));
-    /*
-        FAZER VERIFICAÇÃO AUTENTICAÇÃO DE USUARIO(WILLIAM)
-    */
 %>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -79,18 +73,16 @@
                     <button type="submit" value="buscar" class="search-icon">Buscar</button>
                 </form>
                <%
-                
-                out.print("<a href='paginaInicial.jsp'>Inicio</a>");
-                if(Registro.getIdade()>=18){
-                    out.print("<a href='paginaInicial.jsp?tipo=M&task="+Registro.getIdade()+"'>+18</a>");
-                    //CAMPO ESPECIAL DAS AULAS
-                    out.print("<a href='paginaInicial.jsp?tipo=P&task="+Registro.getIdade()+"'>Aulas</a>");
-                }
-                out.print("<a href='paginaInicial.jsp?tipo=F&task="+Registro.getIdade()+"'>Filme</a>");
-                out.print("<a href='paginaInicial.jsp?tipo=A&task="+Registro.getIdade()+"'>Anime</a>");
-                out.print("<a href='paginaInicial.jsp?tipo=D&task="+Registro.getIdade()+"'>Desenho</a>");
-                
-                //VOCE SÓ FECHA AS ASPAS SIMPLES APOS O FIM DE UM LINK OU DE CONCATENAR TODOS OS ATRIBUTOS
+                    out.print("<a href='paginaInicial.jsp'>Inicio</a>");
+                    if(Registro.getIdade()>=18){
+                        out.print("<a href='paginaInicial.jsp?tipo=M&task="+Registro.getIdade()+"'>+18</a>");
+                        //CAMPO ESPECIAL DAS AULAS
+                        out.print("<a href='paginaInicial.jsp?tipo=P&task="+Registro.getIdade()+"'>Aulas</a>");
+                    }
+                    out.print("<a href='paginaInicial.jsp?tipo=F&task="+Registro.getIdade()+"'>Filme</a>");
+                    out.print("<a href='paginaInicial.jsp?tipo=A&task="+Registro.getIdade()+"'>Anime</a>");
+                    out.print("<a href='paginaInicial.jsp?tipo=D&task="+Registro.getIdade()+"'>Desenho</a>");
+                    //VOCE SÓ FECHA AS ASPAS SIMPLES APOS O FIM DE UM LINK OU DE CONCATENAR TODOS OS ATRIBUTOS
                %>
             </nav>
         </div>
@@ -118,10 +110,11 @@
     </main>
     <div class="carrosel-filmes">
         <div class="owl-carousel owl-theme">
-            <%     
+            <%  
+              conectar=new Conexao().conectar();
               campoDePesquisa=request.getParameter("pesquisa");
               if(campoDePesquisa!=null){
-                conectar=new Conexao().conectar();
+                 
                 sqlTipo=String.format(queries.getCodigoNono(),"%",campoDePesquisa.toUpperCase(),"%","%",campoDePesquisa.toLowerCase(),"%");
                 realizarQuery=conectar.createStatement();
                 realizarBusca=realizarQuery.executeQuery(sqlTipo);
@@ -137,7 +130,6 @@
                   }
                 }
               }else if(request.getParameter("tipo")==null){
-                conectar=new Conexao().conectar();
                 
                 //SÓ É POSSIVEL UTILIZAR TRAZER CERTOS ATRIBUTOS NO RESULTSET SE COLOCALOS NA QUERY, NO CASO SÓ TROUXE idImagem,classificacaoIndicativa CASO PRECISASE USAR ALGO MAIS TERIA QUE COLOCALOS NA QUERY
                 sql=queries.getCodigoSetimo();
@@ -157,7 +149,6 @@
               }else{
                 tipo=request.getParameter("tipo");
                 
-                conectar=new Conexao().conectar();
                 sqlTipo=String.format(queries.getCodigoOitavo(),tipo);
                 realizarQuery=conectar.createStatement();
                 realizarBusca=realizarQuery.executeQuery(sqlTipo);

@@ -1,5 +1,5 @@
-<%@page import="DAO.Conexao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="DAO.Conexao"%>
 <%@page import="java.sql.Blob"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.sql.ResultSet"%>

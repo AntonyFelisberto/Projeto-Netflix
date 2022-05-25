@@ -14,7 +14,7 @@
     String id = request.getParameter("id");
     try {
         Connection con = new Conexao().conectar();
-        PreparedStatement ps = con.prepareStatement("SELECT video FROM videos WHERE idImagem=?");
+        PreparedStatement ps = con.prepareStatement("SELECT video FROM videos WHERE idVideo=?");
         ps.setString(1, id);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {

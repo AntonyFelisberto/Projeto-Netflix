@@ -1,8 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%/*
-    FAZER VERIFICAÇÃO AUTENTICAÇÃO DE USUARIO(WILLIAM)
-*/%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,18 +10,15 @@
     <title>Pagina de cadastro Cinema One</title>
 </head>
 <body id="fundo">
-    
     <div id="video">
     <video id="toque"  autoplay loop class="bg_video">
         <source src="arquivos/anime.mp4" type="video/mp4">
     </video>
     </div>
-    
    <header>
     <h1>WELCOME TO CINEMA ONE</h1>
     <h2>por favor preencha o formulario a baixo</h2>
    </header>
-    
    <main>
     <form action="inserirCadastro.jsp" method="post">
         <label for="nome">user</label><br>
@@ -35,7 +28,7 @@
         <label for="senhaConfirma">Confirmar senha</label><br>
         <input type="password" name="senhaConfirma" placeholder="senha" required><br>
         <label for="cpf">cpf</label><br>
-        <input type="text" name="cpf" placeholder="cpf" required><br>
+        <input type="text" name="cpf" placeholder="cpf com ponto e traço" required><br>
         <label for="telefone">telefone</label><br>
         <input type="tel" name="telefone" placeholder="telefone" required><br>
         <label for="idade">idade</label><br>
@@ -47,6 +40,5 @@
     <br>
     <button><a href="login.jsp">ja tenho cadastro</a></button>
     </main>
-    
 </body>
 </html>

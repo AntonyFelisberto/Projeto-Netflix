@@ -20,17 +20,12 @@
     ResultSet realizarBusca;
     Statement realizarQuery;
     Connection conectar;
-    Random gerarNumeroRandomico=new Random();
-    Listar listarNumeroDeDados=new Listar();
     Sql queries=Sql.SELECT;
-    int background;
     String tipo,sqlTipo,sql,campoDePesquisa;
-    
-    do{
-        background=gerarNumeroRandomico.nextInt(listarNumeroDeDados.retornarNumeroDeDadosNoBanco());
-    }while(background==0 || (listarNumeroDeDados.retornarVerificacaoIdade(background,Registro.getIdade())!=true));
+
     /*
         FAZER VERIFICAÇÃO AUTENTICAÇÃO DE USUARIO(WILLIAM)
+        COLOCAR NOMES DOS FILMES EM CIMA DELES 
         ARRUMAR QUESTÃO DE MULTIPLOS VIDEOS PARA UMA IMAGEM(AS TAGS DE VIDEO ESTÃO FICANDO UMA DENTRO DA OUTRA)
     */
 %>
@@ -97,7 +92,7 @@
                         realizarQuery=conectar.createStatement();
                         realizarBusca=realizarQuery.executeQuery(sql);
 
-                        if(realizarBusca.next()){
+                        while(realizarBusca.next()){
                             Toolkit tk = Toolkit.getDefaultToolkit();
                             Dimension d = tk.getScreenSize();
                             if(realizarBusca.getBlob("video")==null){
@@ -105,15 +100,14 @@
                                 String driver=String.format(drive.getUrl(),realizarBusca.getString("videoEstilizado"),d.width,d.height);
                                 out.print(driver);  
                             }else{
-                                out.print("<video class='box-filme' width='"+d.width+"' height='"+d.height+"' controls>");
-                                out.print("<source src='getVideo.jsp?id="+request.getParameter("id")+"' type='video/mp4'");
+                                out.print("<video class='box-filme' width='"+d.width+"' height='"+d.height+"' controls title='video' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>");
+                                out.print("<source src='getVideo.jsp?id="+realizarBusca.getInt("idVideo")+"' type='video/mp4'");
                                 out.print("</video>");  
                             }    
                         }
                       }catch(Exception erro){
                           throw new RuntimeException(erro);
                       }
-
                     %>       
             </div>  
         </section>

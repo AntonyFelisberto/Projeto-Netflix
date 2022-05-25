@@ -1,9 +1,3 @@
-<%-- 
-    Document   : inserir
-    Created on : 24/02/2022, 10:44:41
-    Author     : Antony
---%>
-
 <%@page import="METODOS.ModelosJs"%>
 <%@page import="java.security.KeyPair"%>
 <%@page import="METODOS.ValidarCpf"%>
@@ -12,16 +6,12 @@
 <%@page import="METODOS.ValidarEmail" %>
 <%@page import="METODOS.ValidarTelefone" %>
 <%@page import="MODEL.Usuario" %>
-<%/*
-    FAZER VERIFICAÇÃO AUTENTICAÇÃO DE USUARIO(WILIIAM)
-*/%>
-
 <%
-   try{
-          
+   try{  
      String nome,senha,email,cpf,telefone,senhaConfirmar;
      int idade;
      boolean cadastrado,cpfValido,emailValido,telefoneValido;
+     
      nome=request.getParameter("nome");
      senha=request.getParameter("senha");
      senhaConfirmar=request.getParameter("senha");
@@ -38,8 +28,7 @@
      if(cpfValido && emailValido && telefoneValido && senha.length()>=10){   
          Usuario inserirDadosDoUsuario=new Usuario();
          Inserir executarInsercaoNoBanco=new Inserir();
-  
-         
+ 
          inserirDadosDoUsuario.setCpf(cpf);
          inserirDadosDoUsuario.setEmail(email);
          inserirDadosDoUsuario.setUser(nome);

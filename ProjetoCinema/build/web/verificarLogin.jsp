@@ -1,16 +1,7 @@
-<%-- 
-    Document   : verificarLogin
-    Created on : 24/02/2022, 16:09:05
-    Author     : Antony
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="MODEL.Usuario"%>
 <%@page import="DAO.Listar"%>
 <%@page import="METODOS.ModelosJs" %>
-<%/*
-    FAZER VERIFICAÇÃO AUTENTICAÇÃO DE USUARIO(WILIIAM)
-*/%>
-
 <!DOCTYPE html>
 <html>
 <%
@@ -33,12 +24,9 @@
         }else{
              out.print(javascript.getLoginSemSucesso());
              out.print(javascript.getRetornoPaginaLoginParaPaginaIndex());
-        }
-        
-        
+        }   
     }catch(Exception erro){
         throw new RuntimeException("erro ao verificar dados"+erro.getMessage());
     }
-    
 %>
 </html>

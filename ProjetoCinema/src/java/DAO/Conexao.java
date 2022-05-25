@@ -52,7 +52,8 @@ public class Conexao {
 //-- create table videos(
 //--     idVideo int primary key generated always as identity (start with 1,increment by 1), 
 //--     video blob,
-//       tipoConteudo varchar(50),--TESTAR response.setContentType("video/mp4");
+//--     titulo varchar(100),
+//--     tipoConteudo varchar(50),--TESTAR response.setContentType("video/mp4");
 //--     videoEstilizado varchar(500),
 //--     idImagem int,
 //--     constraint idImagem foreign key(idImagem) references imagens(idImagem)
@@ -93,7 +94,8 @@ public class Conexao {
 //-- create table videos(
 //--     idVideo int primary key AUTO_INCREMENT, 
 //--     video longblob,
-//       tipoConteudo varchar(50),
+//--     titulo varchar(100),
+//==     tipoConteudo varchar(50),
 //--     videoEstilizado varchar(500),
 //--     idImagem int,
 //--     constraint idImagem foreign key(idImagem) references imagens(idImagem)
