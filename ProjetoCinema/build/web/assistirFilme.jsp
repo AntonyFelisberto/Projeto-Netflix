@@ -96,10 +96,12 @@
                             Toolkit tk = Toolkit.getDefaultToolkit();
                             Dimension d = tk.getScreenSize();
                             if(realizarBusca.getBlob("video")==null){
+                                out.print("<h1>"+realizarBusca.getString("titulo")+"</h1>");
                                 Drive drive=Drive.VIDEODRIVE;
                                 String driver=String.format(drive.getUrl(),realizarBusca.getString("videoEstilizado"),d.width,d.height);
                                 out.print(driver);  
                             }else{
+                                out.print("<h1>"+realizarBusca.getString("titulo")+"</h1>");
                                 out.print("<video class='box-filme' width='"+d.width+"' height='"+d.height+"' controls title='video' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>");
                                 out.print("<source src='getVideo.jsp?id="+realizarBusca.getInt("idVideo")+"' type='video/mp4'");
                                 out.print("</video>");  
