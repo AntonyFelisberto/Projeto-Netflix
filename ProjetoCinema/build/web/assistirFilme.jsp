@@ -55,6 +55,29 @@
             height: 30px;
             top: -30px;
         } 
+        h1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: center;
+            font-size: 2.0em; 
+            background-color: blue; 
+            color: #FFF; 
+        }
+        h1:before, h1:after {
+            background-color: #ddd;
+            content: '\a0';
+            flex-grow: 1;
+            height: 1px;
+            position: relative;
+            top: 0.5em;
+        }
+        h1:before {
+            margin-right:10px;
+        }
+        h1:after {
+            margin-left:10px;
+        }
     </style>
 </head>
 <body>
@@ -96,14 +119,16 @@
                             Toolkit tk = Toolkit.getDefaultToolkit();
                             Dimension d = tk.getScreenSize();
                             if(realizarBusca.getBlob("video")==null){
+                                out.print("<br>");
                                 out.print("<h1>"+realizarBusca.getString("titulo")+"</h1>");
                                 Drive drive=Drive.VIDEODRIVE;
                                 String driver=String.format(drive.getUrl(),realizarBusca.getString("videoEstilizado"),d.width,d.height);
                                 out.print(driver);  
                             }else{
+                                out.print("<br>");
                                 out.print("<h1>"+realizarBusca.getString("titulo")+"</h1>");
-                                out.print("<video class='box-filme' width='"+d.width+"' height='"+d.height+"' controls title='video' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>");
-                                out.print("<source src='getVideo.jsp?id="+realizarBusca.getInt("idVideo")+"' type='video/mp4'");
+                                out.print("<video class='box-filme' width='"+d.width+"' height='"+d.height+"' controls  frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>");
+                                out.print("<source src='getVideo.jsp?id="+realizarBusca.getInt("idVideo")+"' type='video/mp4'>");
                                 out.print("</video>");  
                             }    
                         }
