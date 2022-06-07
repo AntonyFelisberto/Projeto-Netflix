@@ -47,6 +47,31 @@
     <link href="css/botao.css" rel="stylesheet" type="text/css"/>
     <title>Cinema One</title>
     <style>
+        
+                
+        [style*="--aspect-ratio"] > :first-child {
+            width: 100%;
+        }
+        [style*="--aspect-ratio"] > img {  
+          height: auto;
+        }
+        @supports (--custom:property) {
+          [style*="--aspect-ratio"] {
+            position: relative;
+          }
+          [style*="--aspect-ratio"]::before {
+            content: "";
+            display: block;
+            padding-bottom: calc(100% / (var(--aspect-ratio)));
+          }
+          [style*="--aspect-ratio"] > :first-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+          }  
+        }
+        
         .search-icon{
             height: 30px;
         }
@@ -121,9 +146,11 @@
                             if(realizarBusca.getBlob("video")==null){
                                 out.print("<br>");
                                 out.print("<h1>"+realizarBusca.getString("titulo")+"</h1>");
+                                out.print("<div style='--aspect-ratio: 16/9;'>");
                                 Drive drive=Drive.VIDEODRIVE;
                                 String driver=String.format(drive.getUrl(),realizarBusca.getString("videoEstilizado"),d.width,d.height);
                                 out.print(driver);  
+                                out.print("</div>");
                             }else{
                                 out.print("<br>");
                                 out.print("<h1>"+realizarBusca.getString("titulo")+"</h1>");
