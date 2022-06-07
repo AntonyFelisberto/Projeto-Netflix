@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.Calendar;
-import METODOS.EnviarEmail;
 
 public class Inserir {
     private Connection conectarAoBanco;
@@ -31,17 +30,7 @@ public class Inserir {
         
         anoDeNascimento=anoAtual-user.getIdade(); 
         data=String.format("%d-%d-%d", anoDeNascimento,mes,dia);
-//         SimpleDateFormat dateFormat = new SimpleDateFormat ("yyyy-MM-dd");
-//            Date date1 = dateFormat.parse("2019-09-16");
-//            Date date2 = dateFormat.parse("2020-01-25");
-//            System.out.println("Date-1: " + 
-//                               dateFormat.format(date1));
-//            System.out.println("Date-2: " +
-//                               dateFormat.format(date2));
-//            if(date1.before(date2)){
-//                System.out.println(
-//                    "Date-1 is before Date-2");
-//            } 
+        
         try{
           Sql query=Sql.SELECT;
           String verificarDadosDeCadastro=String.format(query.getCodigo(),user.getCpf());
@@ -62,7 +51,6 @@ public class Inserir {
             Registro.setIdade(user.getIdade());
             realizarEstatusSql.execute();
             realizarEstatusSql.close();
-            new EnviarEmail().enviarGmail(user.getEmail());
             return true;
           }
         }catch(SQLException erro){
