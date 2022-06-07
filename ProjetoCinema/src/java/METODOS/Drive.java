@@ -10,7 +10,7 @@ package METODOS;
  * @author Antony
  */
 public enum Drive {
-    VIDEODRIVE("<iframe src='%s' width='%d' height='%d' allow='autoplay' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen frameborder='0' scrolling='no' seamless=''></iframe>");
+    VIDEODRIVE("<iframe src='%s' allow='autoplay' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen frameborder='0' scrolling='no' seamless=''></iframe>");
 
     String url;
     Drive(String url){

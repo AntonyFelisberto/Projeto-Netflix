@@ -148,7 +148,7 @@
                                 out.print("<h1>"+realizarBusca.getString("titulo")+"</h1>");
                                 out.print("<div style='--aspect-ratio: 16/9;'>");
                                 Drive drive=Drive.VIDEODRIVE;
-                                String driver=String.format(drive.getUrl(),realizarBusca.getString("videoEstilizado"),d.width,d.height);
+                                String driver=String.format(drive.getUrl(),realizarBusca.getString("videoEstilizado"));
                                 out.print(driver);  
                                 out.print("</div>");
                             }else{
