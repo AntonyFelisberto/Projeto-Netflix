@@ -7,9 +7,9 @@ public enum Sql {
             "SELECT * FROM imagens WHERE tipo='%s' AND imagem IS NOT NULL",
             "SELECT * FROM imagens WHERE imagem IS NOT NULL",
             "SELECT * FROM imagens WHERE idImagem=%d AND imagem IS NOT NULL",
-            "SELECT idImagem,classificacaoIndicativa FROM imagens WHERE imagem IS NOT NULL",
-            "SELECT idImagem,classificacaoIndicativa FROM imagens WHERE tipo='%s' AND imagem IS NOT NULL",
-            "SELECT idImagem,classificacaoIndicativa FROM imagens WHERE titulo LIKE '%s%s%s' AND imagem IS NOT NULL OR (titulo LIKE '%s%s%s' AND imagem IS NOT NULL)",
+            "SELECT idImagem,titulo,classificacaoIndicativa FROM imagens WHERE imagem IS NOT NULL",
+            "SELECT idImagem,titulo,classificacaoIndicativa FROM imagens WHERE tipo='%s' AND imagem IS NOT NULL",
+            "SELECT idImagem,classificacaoIndicativa,titulo FROM imagens WHERE titulo LIKE '%s%s%s' AND imagem IS NOT NULL OR (titulo LIKE '%s%s%s' AND imagem IS NOT NULL)",
             "SELECT classificacaoIndicativa FROM imagens WHERE idImagem=%d AND imagem IS NOT NULL"
            );
     

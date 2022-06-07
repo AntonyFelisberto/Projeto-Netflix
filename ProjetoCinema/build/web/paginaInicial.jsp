@@ -122,6 +122,7 @@
                 while(realizarBusca.next()){
                   if(Registro.getIdade()>=realizarBusca.getInt("classificacaoIndicativa")){
                     out.print("<div class='item'>");
+                    out.print("<h3>"+realizarBusca.getString("titulo")+"</h3>");
                     out.print("<img class='box-filme' style='height:400px;' src='getImage.jsp?idade="+Registro.getIdade()+"&id="+realizarBusca.getInt("idImagem")+"' alt='imagem'/>");
                           out.print("<div style='text-align: center; object-fit: cover;'><br>");
                               out.print("<button role='button' class='botao'><i class='fas fa-play'></i><a href='assistirFilme.jsp?id="+realizarBusca.getInt("idImagem")+"'>ASSISTIR</a></button>");
@@ -139,6 +140,7 @@
                 while(realizarBusca.next()){
                   if(Registro.getIdade()>=realizarBusca.getInt("classificacaoIndicativa")){
                     out.print("<div class='item'>");
+                    out.print("<h3>"+realizarBusca.getString("titulo")+"</h3>");
                     out.print("<img class='box-filme' style='height:400px;' src='getImage.jsp?idade="+Registro.getIdade()+"&id="+realizarBusca.getInt("idImagem")+"' alt='imagem'/>");
                           out.print("<div style='text-align: center; object-fit: cover;'><br>");
                               out.print("<button role='button' class='botao'><i class='fas fa-play'></i><a href='assistirFilme.jsp?id="+realizarBusca.getInt("idImagem")+"'>ASSISTIR</a></button>");
@@ -156,6 +158,7 @@
                 while(realizarBusca.next()){
                   if(Registro.getIdade()>=realizarBusca.getInt("classificacaoIndicativa")){
                     out.print("<div class='item'>");
+                    out.print("<h3>"+realizarBusca.getString("titulo")+"</h3>");
                     out.print("<img class='box-filme' style='height:400px;' src='getImage.jsp?idade="+Registro.getIdade()+"&id="+realizarBusca.getInt("idImagem")+"' alt='imagem'/>");
                           out.print("<div style='text-align: center; object-fit: cover;'><br>");
                               out.print("<button role='button' class='botao'><i class='fas fa-play'></i><a href='assistirFilme.jsp?id="+realizarBusca.getInt("idImagem")+"'>ASSISTIR</a></button>");
