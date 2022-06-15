@@ -10,7 +10,15 @@ package METODOS;
  * @author Antony
  */
 public enum ModelosJs {
-    JAVASCRIPT("<script>setTimeout(function(){window.alert('logando')},10)</script>","<script>setTimeout(function(){window.alert('voce não esta cadastrado')},10)</script>","<script>setTimeout(function(){window.location.replace('index.jsp')},20)</script>","<script>window.alert('cadastrado')</script>","<script>setTimeout(function(){window.alert('voce ja esta cadastrado')},10)</script>","<script>setTimeout(function(){window.location.replace('index.jsp')},20)</script>","<script>setTimeout(function(){window.alert('senhas não coincidem')},10)</script>","<script>setTimeout(function(){window.alert('senha menor que 10 caracteres')},10)</script>","<script>setTimeout(function(){window.alert('dados invalidos tente novamente')},10)</script>");
+    JAVASCRIPT("<script>setTimeout(function(){window.alert('logando')},10)</script>"
+            ,"<script>setTimeout(function(){window.alert('voce não esta cadastrado')},10)</script>",
+            "<script>setTimeout(function(){window.location.replace('index.jsp')},20)</script>",
+            "<script>window.alert('cadastrado')</script>",
+            "<script>setTimeout(function(){window.alert('voce ja esta cadastrado')},10)</script>",
+            "<script>setTimeout(function(){window.location.replace('index.jsp')},20)</script>",
+            "<script>setTimeout(function(){window.alert('senhas não coincidem')},10)</script>",
+            "<script>setTimeout(function(){window.alert('senha menor que 10 caracteres')},10)</script>",
+            "<script>setTimeout(function(){window.alert('dados invalidos tente novamente')},10)</script>");
     
     private String verificarLoginSucesso;
     private String loginSemSucesso;

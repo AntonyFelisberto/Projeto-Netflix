@@ -77,7 +77,7 @@
                     if(Registro.getIdade()>=18){
                         out.print("<a href='paginaInicial.jsp?tipo=M&task="+Registro.getIdade()+"'>+18</a>");
                         //CAMPO ESPECIAL DAS AULAS
-                        out.print("<a href='paginaInicial.jsp?tipo=P&task="+Registro.getIdade()+"'>Aulas</a>");
+                       out.print("<a href='paginaInicial.jsp?tipo=P&task="+Registro.getIdade()+"'>Aulas</a>");
                     }
                     out.print("<a href='paginaInicial.jsp?tipo=F&task="+Registro.getIdade()+"'>Filme</a>");
                     out.print("<a href='paginaInicial.jsp?tipo=A&task="+Registro.getIdade()+"'>Anime</a>");
