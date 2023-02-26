@@ -128,7 +128,7 @@ public class EnviarImagem extends javax.swing.JFrame {
 
         jLabel14.setText("quando for utilizar videos estilizados voce tem que ir no drive ou youtube pegar o link de incorporação e copiar apenas o que esta dentro do set ex:<iframe src=\"https://www.youtube.com/embed/z0L37D7-wfk\" COPIE SÓ src=\"....\"");
 
-        jLabel15.setText("quando for utilizar a questão das imagens por foreign  key não coloque a imagen, a aplicação vai setala como null  .");
+        jLabel15.setText("quando for utilizar a questão das imagens por foreign  key não coloque a imagen, a aplicação vai setala como null.");
 
         jLabel16.setText("Caso não consiga baixar o filme ou ele seja muito pesado utilize o video estilizado ");
 
@@ -142,7 +142,6 @@ public class EnviarImagem extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +213,8 @@ public class EnviarImagem extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -281,37 +281,16 @@ public class EnviarImagem extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImagemActionPerformed
-//        MODO ANTIGO DE ARMAZENAR IMAGEM 
-//        JFileChooser selecionarImagem = new JFileChooser();     //instanciando o selecionador
-//        int res = selecionarImagem.showOpenDialog(null);        //abrindo seleção
-//
-//        if (res == JFileChooser.APPROVE_OPTION) {               //se opção correta
-//            File arquivo = selecionarImagem.getSelectedFile();  //pega arquivo
-//            File caminhoImagem = new File(arquivo.getAbsolutePath());   //pega o caminho da imagem e armazena
-//            try {
-//                img = ImageIO.read(caminhoImagem); //le o arquivo da imagem
-//                Integer largura = img.getWidth();                               //pega a largura
-//                Integer altura = img.getHeight();                               //pega a altura
-//                imagem = ManipularImagem.setImagemDimensao(arquivo.getAbsolutePath(), 250, 400); //envia pro metodo que vai definir tamanho da imagem (define o tamanho que vai ser a imagem armazenada no banco),//essa imagem aparece na tela
-//                lblImagem.setIcon(new ImageIcon(imagem));                   //cria um Icon e mostra a imagem
-//            } catch (IOException ex) {
-//                Logger.getLogger(EnviarImagem.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Voce nao selecionou nenhum arquivo.");
-//        }
-        
-        
-        
+
         JFileChooser selecionarImagem = new JFileChooser();     //instanciando o selecionador
         int res = selecionarImagem.showOpenDialog(null);        //abrindo seleção
         if (res == JFileChooser.APPROVE_OPTION) {               //se opção correta
@@ -322,8 +301,6 @@ public class EnviarImagem extends javax.swing.JFrame {
           try {
                 FileInputStream fis = new FileInputStream(new File(caminhoDoArquivoSelecionado));
                 byte[] buf = new byte[100000000];
-                //caso o primeiro buf não funcione utilize este pois ele gera menos memoria, porem a resolução pode ficar pior
-//              byte[] buf = new byte[1024];
                 int n;
                 while (-1 != (n = fis.read(buf))){
                     baos.write(buf, 0, n);
@@ -347,10 +324,6 @@ public class EnviarImagem extends javax.swing.JFrame {
          try {
              Dados pegarDados = new Dados();
              Inserir inserirDados = new Inserir();
-             
-             
-             //imagem - modo antigo
-//           pegarDados.setImagem(Bytes.getImgBytes(imagem));         //converte a imagem em bytes e armazena na variavel, lembrando o tamnho da imagem vai ser o mesmo que foi definido na linha 128
              
             //imagem - modo novo
              pegarDados.setImagem(img);              
@@ -431,8 +404,7 @@ public class EnviarImagem extends javax.swing.JFrame {
           try {
                 FileInputStream fis = new FileInputStream(new File(caminhoDoArquivoSelecionado));
                 byte[] buf = new byte[100000000];
-                //caso o primeiro buf não funcione utilize este pois ele gera menos memoria, porem a resolução pode ficar pior
-//              byte[] buf = new byte[1024];
+                
                 int n;
                 while (-1 != (n = fis.read(buf))){
                     baos.write(buf, 0, n);
@@ -465,8 +437,7 @@ public class EnviarImagem extends javax.swing.JFrame {
           try {
                 FileInputStream fis = new FileInputStream(new File(caminhoDoArquivoSelecionado));
                 byte[] buf = new byte[100000000];
-                //caso o primeiro buf não funcione utilize este pois ele gera menos memoria, porem a resolução pode ficar pior
-//              byte[] buf = new byte[1024];
+                
                 int n;
                 while (-1 != (n = fis.read(buf))){
                     baos.write(buf, 0, n);
