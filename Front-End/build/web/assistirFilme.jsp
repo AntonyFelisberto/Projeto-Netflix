@@ -22,12 +22,6 @@
     Connection conectar;
     Sql queries=Sql.SELECT;
     String tipo,sqlTipo,sql,campoDePesquisa;
-
-    /*
-        FAZER VERIFICAÇÃO AUTENTICAÇÃO DE USUARIO(WILLIAM)
-        COLOCAR NOMES DOS FILMES EM CIMA DELES 
-        ARRUMAR QUESTÃO DE MULTIPLOS VIDEOS PARA UMA IMAGEM(AS TAGS DE VIDEO ESTÃO FICANDO UMA DENTRO DA OUTRA)
-    */
 %>
 
 <!DOCTYPE html>
@@ -125,8 +119,6 @@
                 out.print("<a href='paginaInicial.jsp?tipo=F&task="+Registro.getIdade()+"'>Filme</a>");
                 out.print("<a href='paginaInicial.jsp?tipo=A&task="+Registro.getIdade()+"'>Anime</a>");
                 out.print("<a href='paginaInicial.jsp?tipo=D&task="+Registro.getIdade()+"'>Desenho</a>");
-                
-                //VOCE SÓ FECHA AS ASPAS SIMPLES APOS O FIM DE UM LINK OU DE CONCATENAR TODOS OS ATRIBUTOS
                %>
             </nav>
         </div>
@@ -189,7 +181,7 @@
               }else if(request.getParameter("tipo")==null){
                 conectar=new Conexao().conectar();
                 
-                //SÓ É POSSIVEL UTILIZAR TRAZER CERTOS ATRIBUTOS NO RESULTSET SE COLOCALOS NA QUERY, NO CASO SÓ TROUXE idImagem,classificacaoIndicativa CASO PRECISASE USAR ALGO MAIS TERIA QUE COLOCALOS NA QUERY
+                //Sï¿½ ï¿½ POSSIVEL UTILIZAR TRAZER CERTOS ATRIBUTOS NO RESULTSET SE COLOCALOS NA QUERY, NO CASO Sï¿½ TROUXE idImagem,classificacaoIndicativa CASO PRECISASE USAR ALGO MAIS TERIA QUE COLOCALOS NA QUERY
                 sql=queries.getCodigoSetimo();
                 realizarQuery=conectar.createStatement();
                 realizarBusca=realizarQuery.executeQuery(sql);

@@ -22,12 +22,6 @@
     Connection conectar;
     Sql queries=Sql.SELECT;
     String tipo,sqlTipo,sql,campoDePesquisa;
-
-    /*
-        FAZER VERIFICA��O AUTENTICA��O DE USUARIO(WILLIAM)
-        COLOCAR NOMES DOS FILMES EM CIMA DELES 
-        ARRUMAR QUEST�O DE MULTIPLOS VIDEOS PARA UMA IMAGEM(AS TAGS DE VIDEO EST�O FICANDO UMA DENTRO DA OUTRA)
-    */
 %>
 
 <!DOCTYPE html>
@@ -125,8 +119,6 @@
                 out.print("<a href='paginaInicial.jsp?tipo=F&task="+Registro.getIdade()+"'>Filme</a>");
                 out.print("<a href='paginaInicial.jsp?tipo=A&task="+Registro.getIdade()+"'>Anime</a>");
                 out.print("<a href='paginaInicial.jsp?tipo=D&task="+Registro.getIdade()+"'>Desenho</a>");
-                
-                //VOCE S� FECHA AS ASPAS SIMPLES APOS O FIM DE UM LINK OU DE CONCATENAR TODOS OS ATRIBUTOS
                %>
             </nav>
         </div>

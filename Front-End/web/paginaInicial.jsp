@@ -82,7 +82,6 @@
                     out.print("<a href='paginaInicial.jsp?tipo=F&task="+Registro.getIdade()+"'>Filme</a>");
                     out.print("<a href='paginaInicial.jsp?tipo=A&task="+Registro.getIdade()+"'>Anime</a>");
                     out.print("<a href='paginaInicial.jsp?tipo=D&task="+Registro.getIdade()+"'>Desenho</a>");
-                    //VOCE SÓ FECHA AS ASPAS SIMPLES APOS O FIM DE UM LINK OU DE CONCATENAR TODOS OS ATRIBUTOS
                %>
             </nav>
         </div>

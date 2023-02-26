@@ -8,7 +8,6 @@
 <%@page import="java.sql.Connection"%>
 <%
     /*
-        VERIFICAR SE ESTA TUDO CORRETO
         ADICIONAR response.setContentType("video/mp4"); PARA OUTROS TIPOS E VER SE VAI
     */
     String id = request.getParameter("id");

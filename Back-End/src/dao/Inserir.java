@@ -6,11 +6,14 @@ import java.sql.SQLException;
 import model.Dados;
 
 public class Inserir {
+    
     private PreparedStatement realizarQuery;
     private Connection conectar;
+    
     public Inserir(){
         conectar=new Conexao().conectar();
     }
+    
     public Boolean inserir(Dados dados){
         Boolean retorno = false;
         try{      
@@ -54,7 +57,6 @@ public class Inserir {
         }
         
         return retorno;
-    
     }
    
 }
